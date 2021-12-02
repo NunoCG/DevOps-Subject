@@ -1,0 +1,45 @@
+GIT
+	Criamos 4 ambientes de desenvolvimento:
+
+	. Building
+	. Floor
+	. Object
+	. Developer
+
+	Na branch Object foram criados todas as Entidades necessários e os seus respetivos atributos.
+	Em Building trabalhamos o Controller de Building, onde foram criados todos os metodos CRUD.
+	Em Floor trabalhamos o Controller de Floor, onde foram criados todos os metodos CRUD.
+	Na branch Developer demos o merge com as restantes branches.
+
+	No final, depois de testar as funcionalidades, damos merge com a branch master.
+
+	No gitignore colocamos a pasta bin e obj para evitar conflitos de configurações da build.
+
+Implementação 
+
+	Sendo 3 elementos, fizemos a divisão entre:
+	GetID, Create, Update, Delete de Building
+	Get, GetID, Delete de Floor
+	Create, Update de Floor
+
+	A documentação foi feita em conjunto.
+
+	No Controller de Building fizemos os metodos:
+
+	. Get
+	. GetID
+	. Create
+	. Update
+	. Delete (extra)
+
+	No Controller de Floor fizemos os metodos:
+
+	. Get
+	. GetID
+	. Create
+	. Update
+	. Delete (extra)
+
+	Implementamos Swagger para fazer os testes necessários aos metodos da API.
+
+

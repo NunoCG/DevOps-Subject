@@ -1,0 +1,23 @@
+Vantagens da execução de testes:
+
+* A realização de testes deteta bugs/defeitos no código antes do mesmo ser implementado poupando assim tempo e dinheiro que seria gasto em bugfixes.
+
+* Simplifica o processo de debug.
+
+* Depois dos testes e da correção de bugs, o código torna-se eficiente e consistente o que permite a sua reutilização.
+
+Divisão de tarefas
+1º membro - 1 função e respetivos testes
+2º membro - 1 função e respetivos testes
+3º membro - Documentação
+
+Processo aplicado:
+
+Começamos por criar uma nova branch denominada "Domain" para trabalhar nas funcionalidades desta semana. Podiamos ter criado uma branch para cada membro visto que dividimos a criação das funções entre 2 elementos do grupo mas optamos por juntar tudo na mesma branch pois as features desta semana aparentam ser pequenas e rápidas de fazer e achamos melhor fazer desta maneira.
+De seguida, tivemos que alterar a classe Building onde adicionamos uma nova propriedade "Valor" para guardar o preço do prédio para à posteriori podermos calcular o total a pagar por dono.
+Adicionamos ainda a propriedade "building" do tipo <Building> à classe "Flat".
+De seguida, foram feitas duas funções: uma para calcular o preço de um flat e outra para calcular o preço total que o owner irá ter que pagar.
+Por fim, fizemos duas funções de teste para testar as funções referidas no ponto anterior.
+Para os testes, usamos o MSTest mas poderiamos ter usado outras alternativas como NUnit ou XUnit por exemplo.
+
+Nota: O elemento Nuno Guimarães teve problema em dar o push, então o push do trabalho que ele fez foi dado pelo elemento Rui Armada.

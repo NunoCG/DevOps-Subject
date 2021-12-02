@@ -1,0 +1,22 @@
+Week 5
+
+Config 1 -> Para a Configuração 1 escolhemos o tipo de conexão NAT Network visto que a maquina virtual deveria ter acesso a toda a sua rede local, internet e host. Poderiamos ter optado pela Bridged Adapter, no entanto, como nao foi pedido que o Host tivesse acesso às VMs, optamos pela NAT Network e sendo a Bridged Adapter a mais abrangente é também a menos segura.
+Script 1 -> config.vm.network "public_network", type: "dhcp", :bridge => 'Default Switch'
+   	    config.vm.provider "hyperv"
+
+
+Config 2 - Para a Configuração 2 optamos pelo tipo de conexão NAT uma vez que foi requisitado o acesso à internet e ao host. A Internal Network era uma opção, no entanto não foi pedido que as VMs conseguissem comunicar entre si.
+Script 2 -> config.vm.network "public_network", type: "dhcp"
+   	    config.vm.provider "hyperv"
+
+
+Config 3 - Para a Configuração 3 selecionamos o tipo de conexão NAT tendo em conta que necessitavamos que a maquina virtual não fosse acessível na sua rede e que tivesse acesso à internet. Tanto a NAT Network como a Internal Network seriam soluções, no entanto a NAT Network permite que a VM acesse à rede local (não requisitado), e a Internal Network permite que as VMs se comuniquem (também não requisitado).
+Script 3 -> config.vm.network "public_network", type: "dhcp"
+   	    config.vm.provider "hyperv"
+
+
+
+Questão 1 - Na nossa opinião, o tipo de conexão mais segura para trabalho em redes internas é a host-only pois não permite que as VM's consigam aceder à internet evitando possíveis ataques e possibilita comunicação host-to-guest e guest-to-host.
+
+Questão 2 - Para uma máquina virtual sem acesso à internet/rede, optariamos por usar a conexão Not Attached pois a mesma não permite qualquer tipo de conexão de rede e faculta o desenvolvimento numa VM sem qualquer tipo de problema.
+

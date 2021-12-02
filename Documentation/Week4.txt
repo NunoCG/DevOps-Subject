@@ -1,0 +1,14 @@
+DOS Week 4 Documentation
+
+Nesta semana, implementamos o vagrant no nosso projeto.
+Para o fazer, abrimos o CMD como administrador e navegamos até à pasta do projeto.
+De seguida usamos o comando "vagrant init gusztavvargadr/sql-server" para gerar o ficheiro de configuração do vagrant no nosso projeto.
+Usamos o HyperV para a virtualização (poderiamos ter usado outro software de virtualização como por exemplo a virtualbox mas optamos por usar HyperV porque achamos que será melhor para ,no futuro, trabalhar com o docker) e portanto tivemos que adicionar as seguintes configurações ao ficheiro "Vagrantfile":
+	config.vm.provider "hyperv"
+	config.vm.network "public_network"
+	config.vm.box = "gusztavvargadr/sql-server"
+
+Após isto, digitamos "vagrant up" para ligar a máquina.
+Adicionamos ainda as dependências "EntityFrameworkCore.SqlServer", "EntityFrameworkCore" e EntityFrameworkCore.Design.
+Acrescentamos ainda ".vagrant" ao ficheiro gitignore.
+Por fim, fizemos o método da ligação à base de dados.

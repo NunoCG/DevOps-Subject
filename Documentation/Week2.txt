@@ -1,0 +1,26 @@
+Implementação do Swagger
+
+
+- Go to View > Other Windows > Package Manager Console
+- Navigate to the directory in which the TodoApi.csproj file exists
+- And execute this command : "Install-Package Swashbuckle.AspNetCore -Version 5.6.3"
+
+Depois em Startup.cs adicionar o Swagger generator no metodo ConfigureServices:
+
+- "services.AddSwaggerGen(c =>
+          {
+              c.SwaggerDoc("v1", new OpenApiInfo { Title = "ISEP", Version = "v1", });
+          });"
+
+Depois no metodo Configure permitir o middleware para servir o documento JSON gerado e a interface Swagger UI:
+
+- "app.UseSwagger();
+
+   app.UseSwaggerUI(c =>
+   {
+   	c.RoutePrefix = string.Empty;
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+   });"
+
+   Vantagens:
+   Com o Swagger conseguimos fazer os pedidos e os testes (manuais) à nossa API, conseguindo assim verificar todos os métodos.
